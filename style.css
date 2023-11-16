@@ -4,28 +4,64 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+  font-size: 14px;
+}
+
 ul {
   list-style-type: none;
 }
 
-body {
-  height: 100vh;
+a {
+  text-decoration: none;
+  color: #fff;
 }
 
 header {
-  position: absolute;
-  background: #fff;
+  position: relative;
+  /* background: #333; */
   z-index: 999;
   left: 0;
   top: 0;
   width: 100%;
-  background: #ccc;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
 }
 
 .logo img {
-  width: 100px;
+  width: 120px;
 }
 
+
+/* 메인메뉴 */
+header nav.gnb ul li {
+  display: inline-block;
+  margin: 1em;
+  font-weight: bold;
+}
+
+/* 유틸 메뉴 */
+header nav.util-nav ul {
+  display: flex;
+  gap: 1em;
+  
+} 
+
+header nav.util-nav button {
+  background-color: transparent;
+  border-style: none;
+  color: #fff;
+}
+
+header [class*='material'] {
+  font-weight: 300;
+}
+
+/* 비디오 배경 */
 #demoVid {
   position: fixed;
   z-index: 0;
@@ -35,3 +71,54 @@ header {
   min-height: 100%;
   transform: translate(-50%, -50%);  
 }
+
+/* 배경 그라디언트 레이어 
+  상단 배경을 어둡게 처리하여 메뉴와 제목 가독성 처리
+*/
+.layer {
+  position: fixed;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(rgba(0,0,0, 0.8), rgba(0,0,0, 0) 80%);
+}
+
+#hero {
+  position: relative;
+  height: calc(100vh - 56px);
+  z-index: 10;
+  /* padding-top: 100px; */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#hero h1 {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+
+.cta {
+  display: inline-block;
+  border: 2px solid #fff;
+  padding: 10px 24px;
+  width: 260px;
+  transition:  0.4s;
+}
+
+.cta:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+
+
+/* gnb */
+
+
