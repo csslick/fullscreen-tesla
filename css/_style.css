@@ -38,11 +38,15 @@ header {
 
 
 /* 메인메뉴 */
+
 header nav.gnb ul li {
   display: inline-block;
   margin: 1em;
   font-weight: bold;
 }
+
+
+
 
 /* 유틸 메뉴 */
 header nav.util-nav ul {
@@ -116,9 +120,5 @@ header [class*='material'] {
   background-color: #fff;
   color: #000;
 }
-
-
-
-/* gnb */
 
 
