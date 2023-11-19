@@ -37,40 +37,38 @@ header .logo img {
 }
 
 /* 메인메뉴 */
-header .gnb {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
 header .gnb .depth1 {
   display: flex;
 }
-header .gnb .depth1 li {
+header .gnb .depth1 > li {
   width: 6em;
   text-align: center;
 }
 
 header .depth2 {
-  background: rgba(240, 240, 240, 0.7);
-  padding: 10px 0;
   max-height: 0;
   opacity: 0;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
   transition: 0.4s;
   margin-top: 1em;
+  position: fixed;
+  width: 100vw;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+}
+header .depth2.show {
+  max-height: 300px;
+  opacity: 1;
 }
 header .depth2 li a {
   display: block;
-  padding: 6px;
+  padding: 40px 20px;
   color: #333;
 }
-header .depth1 > li:hover .depth2 {
-  max-height: 200px;
-  opacity: 1;
-}
-header .depth1 > li:hover .depth2 a:hover {
-  background: #333;
-  color: #fff;
+header .depth2 li a img {
+  width: 200px;
 }
 
 /* 유틸 메뉴 */
@@ -143,4 +141,11 @@ header [class*=material] {
 .cta:hover {
   background-color: #fff;
   color: #000;
+}
+
+header.dark {
+  background: #000;
+}
+header.dark .depth1 > li > a {
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

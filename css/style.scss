@@ -40,13 +40,9 @@ header {
 /* 메인메뉴 */
 header {
   .gnb {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translate(-50%, 0);
     .depth1 {
       display: flex;
-      li { 
+      & > li { 
         width: 6em;
         // outline: 1px solid red;
         text-align: center;
@@ -58,32 +54,36 @@ header {
 // 2단계 메뉴
 header {
   .depth2 { 
-    background: rgba(240,240,240, 0.70);
-    padding: 10px 0;
-    // display: none;
-    max-height: 0;
-    opacity: 0;
-    transition: 0.4s;
-    margin-top: 1em;
+    & {
+      // display: none;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      background: rgba(255,255,255, 1);
+      transition: 0.4s;
+      margin-top: 1em;
+      position: fixed;
+      width: 100vw;
+      left: 0px;
+      display: flex;
+      justify-content: center;
+    }
+
+    &.show {
+      max-height: 300px;
+      opacity: 1;
+    }
 
     li a {
       // background: pink;
       display: block;
-      padding: 6px;
+      padding: 40px 20px;
       color: #333;
+      img { width: 200px;}
     }
   }
 
-  .depth1 > li:hover .depth2 {
-    // display: block;
-    max-height: 200px;
-    opacity: 1;
 
-    a:hover {
-      background: #333;
-      color: #fff;
-    }
-  }
 }
 
 /* 유틸 메뉴 */
@@ -160,3 +160,9 @@ header [class*='material'] {
 }
 
 
+header.dark {
+  background: #000;
+  .depth1 > li > a {
+    color: #fff;
+  }
+}
